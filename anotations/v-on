@@ -1,0 +1,13 @@
+
+## ex: v-on:click=""
+## Diretiva que intercepta eventos, e chama uma função
+## quando um evento ocorre chama uma função respectiva
+
+## ex: v-on:mousemove.stop="" --> modificador de evento
+## consegue evita a propagração de eventos
+
+## ex: v-on:click.prevent="" --> previne comportamento padrao do evento
+## ex: v-on:click.prevent.stop="" -> encadeamento de modificadores
+
+## ex: v-on:keyup="" --> monitora todo o teclado e executa uma função (ou não);
+## ex: v-on:keyuyp.enter="" --> escuta uma tecla especifica,nesse caso o enter

@@ -1,0 +1,6 @@
+## São propriedades personalizadas não nativas do html
+## Porém, o html5 permite sua utilização
+## Obviamente no contexto de Vue, utilizamos em relação ao frameWorkd
+## Contudo,não são propriedades com valores semânticos prontos do html5
+
+

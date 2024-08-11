@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo</title>
+</head>
+
+<body>
+    <style>
+        .caixas {
+            display: flex;
+            justify-content: space-between;
+            border: 2px solid #9929;
+        }
+
+        .demo {
+            margin: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: background-color 0.5s ease;
+            display: flex;
+        }
+
+        .demo:hover {
+            background-color: blue;
+            transform: scale(1.1);
+            cursor: pointer;
+            transition: transform 0.5s ease;
+
+        }
+
+        .c1 {
+            background-color: green;
+        }
+
+        .c2 {
+            background-color: yellow;
+        }
+
+        .c3 {
+            background-color: purple;
+        }
+
+        .girar {
+            transform: rotate(45deg);
+            /* transform: rotateY(180deg); */
+            transition: transform 0.5s ease;
+        }
+    </style>
+    <div id="app">
+        <div class="caixas">
+            <div class="demo" :class="style1" @click="aplyC1=!aplyC1"></div>
+            <div class="demo" @click="aplyC1=!aplyC1"></div>
+            <div class="demo" :class="[classeCSS,{girar:aplicarGirar}]"></div>
+
+        </div>
+        <hr>
+        <input type="text" v-model="classeCSS">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                aplyC1: false,
+                classeCSS: "c1",
+                aplicarGirar: true,
+            },
+            computed: {
+                style1() {
+                    return {
+                        c1: this.aplyC1,
+                        c2: !(this.aplyC1),
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

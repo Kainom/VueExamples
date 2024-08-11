@@ -1,0 +1,4 @@
+## garante que a alteração no html srinconize com o vue
+## portanto,o vue pode alterar o dado assim como o html
+## uma dupla atualização de ida e volta um --> two-way-data-bind <--
+## vue atualiza o template e o template atualiza o vue

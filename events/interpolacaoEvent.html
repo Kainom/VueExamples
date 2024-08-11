@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+<div class="app">
+    <p>{{contador++}}</p>
+    <p>{{contador >= 10 ? "OK":"Not Ok"}}</p>
+    <button v-on:click="increment ">Incrementar</button>
+</div>
+
+
+<script>
+    new Vue({
+        el: ".app",
+        data: {
+            contador: 0,
+        },
+        methods: {
+            increment(e) {
+                this.contador++;
+            },
+        }
+    })
+
+
+</script>

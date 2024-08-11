@@ -1,0 +1,43 @@
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+
+<div class="app">
+    <p>{{contador}}</p>
+    <button v-on:click="increment ">Incrementar</button>
+    <p style="background-color: aqua;" v-on:mousemove="update"> Mouse: {{x}} and {{y}} 
+        <span v-on:mousemove.stop="" style="background-color: red;">STOP HERE!</span>
+    </p>
+    <a v-on:click.prevent="" href="http:://google.com">Google</a>
+</div>
+
+
+<script>
+    new Vue({
+        el: ".app",
+        data: {
+            contador: 0,
+            x: 0,
+            y: 0,
+            bodyX: 0,
+            bodyY: 0
+        },
+        methods: {
+            increment(e) {
+                this.contador++;
+            },
+            update(event) {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            updateBody(event) {
+                this.bodyX = event.clientX;
+                this.bodyY = event.clientY;
+            },
+            parar(event){
+                event.stopPropagation();
+            }
+        }
+    })
+
+
+</script>
