@@ -1,2 +1,2 @@
 # VueExamples
-Some simple examples of VUE2 codes
+Simple examples of codes in vue2.Anotations and exercises also
