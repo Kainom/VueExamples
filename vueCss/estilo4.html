@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilo</title>
+</head>
+
+<body>
+    <style>
+        .caixas {
+            display: flex;
+            justify-content: space-between;
+            border: 2px solid #9929;
+        }
+
+        .demo {
+            margin: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: background-color 0.5s ease;
+            display: flex;
+        }
+
+        .demo:hover {
+            background-color: blue;
+            transform: scale(1.1);
+            cursor: pointer;
+            transition: transform 0.5s ease;
+
+        }
+
+        .c1 {
+            background-color: green;
+        }
+
+        .c2 {
+            background-color: yellow;
+        }
+
+        .c3 {
+            background-color: purple;
+        }
+
+        .girar {
+            transform: rotate(45deg);
+            /* transform: rotateY(180deg); */
+            transition: transform 0.5s ease;
+        }
+    </style>
+    <div id="app">
+        <div class="caixas">
+            <div class="demo" :style="{'background-color':color}"></div>
+            <div class="demo" :style="[meuEstilo]"></div>
+            <div class="demo"></div>
+
+        </div>
+        <hr>
+        <input type="text" v-model="color">
+        <input type="text" v-model="forma">
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                classeCSS: "c1",
+                color: "#afe",
+                forma: 100,
+            },
+            computed: {
+                meuEstilo() {
+                    return {
+                        backgroundColor: this.color,
+                        transform: "rotate(45deg);",
+                        transition: " transform 1.5s ease;",
+                        width: this.forma + "px",
+                        height: this.forma + "px",
+
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
